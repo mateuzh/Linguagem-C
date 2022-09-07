@@ -4,7 +4,7 @@
 int main() 
 {
 	char codigo;
-	printf("Selecione o codigo do produto para ver o preco.\n\n");
+	printf("Selecione o codigo do produto para ver o nome do produto e seu preco.\n\n");
 	printf("A\n");	
 	printf("B\n");
 	printf("C\n");
