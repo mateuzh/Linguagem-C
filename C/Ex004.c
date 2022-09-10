@@ -11,6 +11,8 @@ int main()
     scanf("%d", &idade1);
     printf("Nos avalie (1 ate 5): ");
     scanf("%d", &resposta1);
+    maior = 0;
+    quantidade5 = 0;
     switch (resposta1)
     {
     case 1:
@@ -62,6 +64,9 @@ int main()
     {
     case 1:
         nota1 = nota1 + 1;
+        if (idade2 > maior){
+            maior = idade2;
+        }
         break;
     case 2:
         nota2 = nota2 + 1;
@@ -76,9 +81,6 @@ int main()
         nota5 = nota5 + 1;
         quantidade5 = quantidade5 +1;
         media = media + idade2;
-        if (idade2 > maior){
-            maior = idade2;
-        }
         break;
     default:
         break;
@@ -91,6 +93,9 @@ int main()
     {
     case 1:
         nota1 = nota1 + 1;
+        if (idade3 > maior){
+            maior = idade3;
+        }
         break;
     case 2:
         nota2 = nota2 + 1;
@@ -105,9 +110,6 @@ int main()
         nota5 = nota5 + 1;
         quantidade5 = quantidade5 +1;
         media = media + idade3;
-        if (idade3 > maior){
-            maior = idade3;
-        }
         break;
     default:
         break;
@@ -120,6 +122,9 @@ int main()
     {
     case 1:
         nota1 = nota1 + 1;
+        if (idade4 > maior){
+            maior = idade4;
+        }
         break;
     case 2:
         nota2 = nota2 + 1;
@@ -134,9 +139,6 @@ int main()
         nota5 = nota5 + 1;
         quantidade5 = quantidade5 +1;
         media = media + idade4;
-        if (idade4 > maior){
-            maior = idade4;
-        }
         break;
     default:
         break;
@@ -149,6 +151,9 @@ int main()
     {
     case 1:
         nota1 = nota1 + 1;
+        if (idade5 > maior){
+            maior = idade5;
+        }
         break;
     case 2:
         nota2 = nota2 + 1;
@@ -163,9 +168,6 @@ int main()
         media = media + idade5;
         quantidade5 = quantidade5 +1;
         nota5 = nota5 + 1;
-        if (idade5 > maior){
-            maior = idade5;
-        }
         break;
     default:
         break;
@@ -182,6 +184,6 @@ int main()
     printf("A porcentagem de avaliacoes com 4 estrela: %f\n", porcentagem4);
     printf("A porcentagem de avaliacoes com 5 estrela: %f\n", porcentagem5);
     printf("A media de idade de pessoas que avaliaram com 5 estrelas foi de: %f\n", media5);
-    printf("A maior idade que deu 1 estrela na avaliação foi: %d\n", maior);
+    printf("A maior idade que deu 1 estrela na avaliacao foi: %d\n", maior);
     return 0;
 }
