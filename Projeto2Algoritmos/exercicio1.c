@@ -12,6 +12,7 @@ struct dados_carro
 struct tipo_horario
 {
     int horas_saida, horas_entrada, minutos_saida, minutos_entrada;
+    int horario_entrada, horario_saida;
 };
 
 struct preco_tempo
@@ -25,7 +26,15 @@ int main(){
     struct dados_carro carro;
     struct tipo_horario horarios;
     struct preco_tempo tp; //Variavel para tempo e valor
+    char entrada[6], saida[6];
 
+
+    printf("Digite o horario de entrada: ");
+    scanf("%s", &entrada);
+    printf("Digite o horario da saida: ");
+    scanf("%s", &saida);
+    printf("%s\n", entrada);
+    printf("%s\n", saida);
     printf("Digite a placa do carro: ");
     scanf("%s", &carro.placa);
     printf("Digite o modelo do carro: ");
