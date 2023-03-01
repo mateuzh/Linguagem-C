@@ -23,43 +23,40 @@ struct preco_tempo
 
 int main(){
 
-    int i = 0;
-    int quantidade = 1;
     int escolha = 0;
-    struct dados_carro carro[quantidade];
-    struct tipo_horario horarios[quantidade];
-    struct preco_tempo tp[quantidade]; //Variavel para tempo e valor
+    struct dados_carro carro;
+    struct tipo_horario horarios;
+    struct preco_tempo tp; //Variavel para tempo e valor
     while (1)
     {
-        i = quantidade - 1;
+        
         printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
-        printf("%d\n", i);
         printf("Digite a placa do carro: ");
-        scanf("%s", &carro[i].placa);
+        scanf("%s", &carro.placa);
         printf("Digite o modelo do carro: ");
-        scanf("%s", &carro[i].modelo);
+        scanf("%s", &carro.modelo);
         printf("Horario da entrada: \n");
         printf("Hora: ");
-        scanf("%d:%d", &horarios[i].horas_entrada, &horarios[i].minutos_entrada);
+        scanf("%d:%d", &horarios.horas_entrada, &horarios.minutos_entrada);
         printf("Horarios da saida: \n");
         printf("Horas: ");
-        scanf("%d:%d", &horarios[i].horas_saida, &horarios[i].minutos_saida);
+        scanf("%d:%d", &horarios.horas_saida, &horarios.minutos_saida);
 
-        tp[i].tempo = ((horarios[i].horas_saida * 60) + horarios[i].minutos_saida) - ((horarios[i].horas_entrada * 60) + horarios[i].minutos_entrada);
+        tp.tempo = ((horarios.horas_saida * 60) + horarios.minutos_saida) - ((horarios.horas_entrada * 60) + horarios.minutos_entrada);
         
-        if (tp[i].tempo >= 60)
+        if (tp.tempo >= 60)
         {
-            tp[i].valor = (60 * 0.083333333) + ((tp[i].tempo-60) * 0.03333333);
+            tp.valor = (60 * 0.083333333) + ((tp.tempo-60) * 0.03333333);
         }
         else
         {
-            tp[i].valor = tp[i].tempo *0.08333333;
+            tp.valor = tp.tempo *0.08333333;
         }
 
-        printf("Placa: %s\n", carro[i].placa);
-        printf("Modelo: %s\n", carro[i].modelo);
-        printf("Tempo no estacionamento: %d\n", tp[i].tempo);
-        printf("Valor: R$%f\n", tp[i].valor);
+        printf("Placa: %s\n", carro.placa);
+        printf("Modelo: %s\n", carro.modelo);
+        printf("Tempo no estacionamento: %d\n", tp.tempo);
+        printf("Valor: R$%f\n", tp.valor);
         printf("Cadastrar mais carros?\n");
         printf("1- Sim \n");
         printf("2- Nao \n");
@@ -84,7 +81,6 @@ int main(){
         else 
         {
             system("cls");
-            quantidade++;
         }
         
     }

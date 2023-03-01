@@ -30,11 +30,12 @@ int main(){
 
         time(&segundos);
         hora_inicio = localtime(&segundos);
+        printf("Horario de inicio: %d:%d:%d\n", hora_inicio->tm_hour,hora_inicio->tm_min, hora_inicio->tm_sec);
         printf("Hora final: %d:%d:%d\n", hora_limite, minuto_limite, segundo_limite);
         printf("Acertos: %d\n", acertos);
         printf("Erros: %d\n", erros);
         numero_aleatorio = rand()%19;
-        printf(" --=-- %s --=-- \n", palavras[numero_aleatorio]);
+        printf(" <<<%s>>> \n", palavras[numero_aleatorio]);
         printf("Escreva a palavra acima: ");
         scanf("%s", &usuario);
         if (strcmp(usuario, palavras[numero_aleatorio]) == 0)
@@ -49,21 +50,18 @@ int main(){
         }
         if (hora_inicio->tm_min >= minuto_limite)
         {
-            if (hora_inicio->tm_sec > segundo_limite)
+            if (hora_inicio->tm_sec >= segundo_limite)
             {
                 break;
             }
             
         }
         
-        
         system("cls");
         
     }
     
-    
     printf("Quantidade de acertos: %d\n", acertos);
     printf("Quantidade de erros: %d\n", erros);
-    
     return 0;
 }
